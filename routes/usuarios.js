@@ -7,13 +7,6 @@ const jwt = require('jsonwebtoken');
 //clave token archivo .env
 const JWT_SECRET = process.env.JWT_SECRET || 'Up_mh25_$12657';
 
-
-router.options("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.sendStatus(200);
-});
 //middelware verificacion del rol admin
 const verifyAdmin = (req, res, next) => {
     const authHeader = req.headers['authorization'];
