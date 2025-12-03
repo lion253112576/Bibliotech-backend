@@ -35,4 +35,3 @@ app.get('/bibliotech', (req, res) => res.sendFile(__dirname + '/public/pages/das
 app.get('/prestamos', (req, res) => res.sendFile(__dirname + '/public/pages/prestamos.html'));
 app.get('/admin', (req, res) => res.sendFile(__dirname + '/public/pages/admin.html'));
 
-
