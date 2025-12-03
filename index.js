@@ -8,8 +8,7 @@ const routerLibros = require('./routes/libros.js');
 const routerRentas = require('./routes/rentas.js')
 
 // Habilitar CORS
-app.use(cors());                         // ← AQUI
-app.options('*', cors());                // ← AQUI
+app.use(cors());             // ← AQUI
 
 //server
 const PORT = process.env.PORT || 3000;
