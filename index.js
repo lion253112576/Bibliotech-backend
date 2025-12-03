@@ -9,6 +9,12 @@ const routerRentas = require('./routes/rentas.js')
 
 // Habilitar CORS
 app.use(cors());             // ← AQUI
+app.options('*', (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  return res.sendStatus(200);
+});
 
 //server
 const PORT = process.env.PORT || 3000;
