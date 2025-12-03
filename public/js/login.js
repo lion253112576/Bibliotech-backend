@@ -75,7 +75,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     password: e.target.contra.value
   }
   try {
-    const response = await fetch(`${API_BASE_URL}/api/usuarios`, {
+    const response = await fetch(`${API_BASE_URL}/api/usuarios/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

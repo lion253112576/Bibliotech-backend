@@ -1,4 +1,5 @@
-const LIBROS_API_URL = '/api/libros';
+const API_BASE_URL = 'https://bibliotech-backend-s219.onrender.com';
+const LIBROS_API_URL = `${API_BASE_URL}/api/libros`;
 
 const librosTableBody = document.querySelector('#librosTable tbody');
 const addBookModal = document.getElementById('editBookModal');

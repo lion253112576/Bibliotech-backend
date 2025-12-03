@@ -1,5 +1,7 @@
-const RENTAS_API_URL = '/api/prestamos';
-const ADMIN_RENTAS_API_URL = '/api/prestamos';
+const API_BASE_URL = 'https://bibliotech-backend-s219.onrender.com';
+
+const RENTAS_API_URL = `${API_BASE_URL}/api/prestamos`;
+const ADMIN_RENTAS_API_URL = `${API_BASE_URL}/api/prestamos`;
 
 const rentasTableBody = document.querySelector('#prestamosTable tbody');
 const addRentModal = document.getElementById('editRentaModal');
