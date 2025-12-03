@@ -9,9 +9,7 @@ const routerRentas = require('./routes/rentas.js')
 
 app.use(cors({
     origin: [
-        'http://localhost:5500',   // o tu puerto local
-        'http://localhost:3000',
-        'https://TU-FRONTEND.onrender.com',
+        'https://bibliotech-backend-s2i9.onrender.com',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
