@@ -9,31 +9,23 @@ const routerRentas = require('./routes/rentas.js')
 
 // Habilitar CORS
 app.use(cors());             // ← AQUI
-app.options('*', (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  return res.sendStatus(200);
-});
 
-//server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
-
-pool.connect((err) => {
-    if (err) {
-        console.log('Error de conexion a la base de datos', err.stack)
-    } else {
-        console.log('Base de datos conectada');
+app.all("/", (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(200);
     }
+    next();
 });
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(__dirname + '/public/'));
 
 //Configuracion
-app.use(express.json());
-app.use(express.static(__dirname + '/public/'));
 app.use('/api/usuarios', routerUsuarios);
 app.use('/api/libros', routerLibros);
 app.use('/api/prestamos', routerRentas);
@@ -45,4 +37,16 @@ app.get('/bibliotech', (req, res) => res.sendFile(__dirname + '/public/pages/das
 app.get('/prestamos', (req, res) => res.sendFile(__dirname + '/public/pages/prestamos.html'));
 app.get('/admin', (req, res) => res.sendFile(__dirname + '/public/pages/admin.html'));
 
+pool.connect((err) => {
+    if (err) {
+        console.log('Error de conexion a la base de datos', err.stack)
+    } else {
+        console.log('Base de datos conectada');
+    }
+});
 
+//server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
