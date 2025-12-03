@@ -7,19 +7,31 @@ const routerUsuarios = require('./routes/usuarios.js');
 const routerLibros = require('./routes/libros.js');
 const routerRentas = require('./routes/rentas.js')
 
-// Habilitar CORS
-app.use(cors());             // ← AQUI
-// Middleware para manejar cualquier OPTIONS automáticamente
-app.all("/", (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+const allowedOrigins = [
+  "https://bibliotech-backend-s2i9.onrender.com", // tu front
+  "http://localhost:3000",
+  "http://127.0.0.1:3000"
+];
 
-    if (req.method === "OPTIONS") {
-        return res.sendStatus(200);
-    }
+app.use(
+  require("cors")({
+    origin: function (origin, callback) {
+      // permitir peticiones sin origin (curl, postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Origen no permitido por CORS: " + origin));
+    },
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type, Authorization"
+  })
+);
 
-    next();
+// Permitir preflight OPTIONS para todas las rutas
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", allowedOrigins.join(","));
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
 });
 
 app.use(express.json());
