@@ -1,4 +1,5 @@
-const MY_RENTAS_API_URL = '/api/prestamos/mis_rentas';
+const GLOBAL_API_URL = 'https://bibliotech-backend-s2i9.onrender.com';
+const MY_RENTAS_API_URL = `${GLOBAL_API_URL}/api/prestamos/mis_rentas`;
 
 const tabla = document.getElementById('tablaPrestamos');
 const token = localStorage.getItem("authToken");

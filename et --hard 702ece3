@@ -1,0 +1,36 @@
+[33me292559[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m feat: recuperar local host
+[33ma44d8dc[m feat: Estructura inicial
+[33m702ece3[m feat: Estructura inicial
+[33m746d4bb[m feat: Estructura inicial
+[33mae09002[m Merge pull request #11 from hjose849/patch-11
+[33m9ed7e27[m Update index.js
+[33mdd9485d[m Merge pull request #10 from hjose849/patch-10
+[33m578db4e[m Update index.js
+[33m028d8f8[m Merge pull request #9 from hjose849/patch-9
+[33m667e421[m Update usuarios.js
+[33m9f7fca9[m Merge pull request #8 from hjose849/patch-7
+[33m943cde2[m Merge pull request #7 from hjose849/patch-8
+[33mc5ceb56[m Update index.js
+[33mebbf4a0[m Update usuarios.js
+[33m83eb094[m Merge pull request #6 from hjose849/patch-6
+[33m42e7c82[m Update index.js
+[33m007132f[m feat: Reacomodo que dio el chat otra vez
+[33mf2d494e[m Merge branch 'main' of https://github.com/lion253112576/Bibliotech-backend
+[33me94c1e7[m feat: Reacomodo que dio el chat
+[33m1a9e8a5[m Merge pull request #5 from hjose849/patch-5
+[33m1776b2a[m Update index.js
+[33mfd89f67[m Merge pull request #4 from hjose849/patch-4
+[33mb331c6a[m Update index.js
+[33me108ad8[m feat: habilitar cors
+[33ma429c7d[m Merge pull request #3 from hjose849/patch-3
+[33m28c7af5[m Update index.js
+[33m4b4237d[m Merge pull request #2 from hjose849/patch-2
+[33m8ab7c7d[m Update index.js
+[33ma0fc8f6[m feat: poner cors en index.js e intalar su dependencia
+[33mf464d27[m feat: actualizar URLs del frontend
+[33m87787a7[m feat: actualizar URLs del frontend
+[33ma40ef7f[m feat: actualizar URLs del frontend
+[33m06ab210[m feat: actualizar URLs del frontend a produccion en Render
+[33m997be5d[m fix: correciones de CRUD
+[33mdd60a88[m feat: actualizar urls de frontend a produccion en render
+[33maa54b6e[m feat: configuracion inicial del backend y frontend

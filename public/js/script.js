@@ -83,8 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //CRUD Prestamos(Create) Libros(Read)
-const RENTAS_POST_API_URL = "/api/prestamos";
-const LIBROS_API_URL = '/api/libros';
+const GLOBAL_API_URL = 'https://bibliotech-backend-s2i9.onrender.com';
+const RENTAS_POST_API_URL = `${GLOBAL_API_URL}/api/prestamos`;
+const LIBROS_API_URL = `${GLOBAL_API_URL}/api/libros`;
 const ListaTable = document.querySelector('#listaLibros tbody')
 let allLibros = [];
 

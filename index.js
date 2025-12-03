@@ -6,7 +6,6 @@ const routerUsuarios = require('./routes/usuarios.js');
 const routerLibros = require('./routes/libros.js');
 const routerRentas = require('./routes/rentas.js')
 
-
 //server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
