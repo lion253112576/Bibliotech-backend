@@ -7,13 +7,9 @@ const routerUsuarios = require('./routes/usuarios.js');
 const routerLibros = require('./routes/libros.js');
 const routerRentas = require('./routes/rentas.js')
 
-app.use(cors({
-    origin: [
-        'https://bibliotech-backend-s2i9.onrender.com',
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// Habilitar CORS
+app.use(cors());                         // ← AQUI
+app.options('*', cors());                // ← AQUI
 
 //server
 const PORT = process.env.PORT || 3000;
