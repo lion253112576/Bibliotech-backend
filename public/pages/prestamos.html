@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Préstamos Registrados</title>
+  <link rel="stylesheet" href="../styles/prestamos.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Préstamos Registrados</h1>
+    <div class="top-buttons">
+      <button class="top-btn" onclick="window.location.href='/bibliotech'">
+        Biblioteca
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="prestamos-container">
+      <table class="prestamos-table" id="prestamosTable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Libro</th>
+            <th>Fecha de Préstamo</th>
+            <th>Fecha de Devolución</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPrestamos">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Biblioteca Temazcalli</p>
+  </footer>
+  <script src="../js/prestamos.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Biblioteca Temazcalli</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<div class="campo">
+
+  <body>
+    <header>
+      <h1>Biblioteca Temazcalli </h1>
+
+      <p id="userEmail" class="userRegistrado"></p>
+
+      <div class="top-buttons">
+        <button class="top-btn hidden" id="loginButton" onclick="window.location.href = '/login'">
+          Iniciar sesion / Registrarse
+        </button>
+
+        <button class="top-btn" onclick="window.location.href = '/prestamos'">
+          Préstamos Registrados
+        </button>
+
+        <button class="top-btn hidden" id="logoutButton">
+          Cerrar Sesion
+        </button>
+      </div>
+    </header>
+
+    <!-- Panel flotante superior -->
+    <div id="panelReserva" class="slide-panel">
+      <div class="panel-toggle" onclick="togglePanel()">
+        <span class="toggle-text">Libro reservado</span>
+        <span id="toggleArrow" class="toggle-arrow">▼</span>
+      </div>
+
+      <div class="panel-body">
+        <p><strong>Dirección de la biblioteca:</strong></p>
+        <p>San Francisco 6, Temascalapa Centro, 55980 Temascalapa, Méx.</p>
+        <p>Pasa por tu libro dentro de los próximos <strong>2 días</strong>.</p>
+      </div>
+    </div>
+
+    <main>
+
+      <section class="form-section">
+        <h2>Registrar Préstamo</h2>
+        <form id="prestamoForm">
+
+          <div class="campo">
+            <label for="Idlibro">Id del libro</label>
+            <input id="Idlibro" type="number" placeholder="Ingresa el Id del libro" required />
+          </div>
+
+          <div class="campo">
+            <label for="fechaPrestamo">Fecha de Prestamo</label>
+            <input id="fechaPrestamo" type="date" required />
+          </div>
+
+          <button type="submit" class="btn">Registrar préstamo</button>
+        </form>
+      </section>
+
+      <section class="libros-section">
+        <div class="fondo">
+          <input type="text" placeholder="Buscar..." class="buscador" id="searchInputLibros">
+          <img src="../img/lupa.png" alt="lupa">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <h2>Libros Disponibles</h2>
+        <div id="listaLibros" class="lista-libros">
+          <table id="listaLibros">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Editorial</th>
+                <th>Fecha de Publicacion</th>
+                <th>Estado del Libro</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+
+
+    </main>
+
+    <div id="flechaFlotante" class="flecha-flotante oculto" onclick="togglePanel()">
+      ▼
+    </div>
+
+    <footer>
+      <p>Numero de Contacto: 5621494852</p>
+      <p>Direccion: San Francisco 6, Temascalapa Centro, 55980 Temascalapa, Méx.</p>
+      <p>© 2025 Biblioteca Temazcalli</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+
+
+</html>

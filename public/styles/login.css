@@ -1,0 +1,136 @@
+/* estilos generales */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0908;
+  color: #e5e0d8;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* encabezado */
+header {
+  background: linear-gradient(90deg, #1b120e, #2b1d15);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #b68d40;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+/* contenedor principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* caja del formulario */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-box {
+  background-color: #1c1612;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid #3a2c22;
+}
+
+h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* campos */
+.campo {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #e5e0d8;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #4a3a2f;
+  background-color: #2a211b;
+  color: #f1ede6;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b68d40;
+  box-shadow: 0 0 5px #b68d40;
+}
+
+/* botón */
+.btn {
+  width: 100%;
+  background-color: #b68d40;
+  color: #1a120b;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* enlace de cambio */
+.toggle-text {
+  text-align: center;
+  margin-top: 1rem;
+  color: #c2b59b;
+  font-size: 0.95rem;
+}
+
+.toggle-text a {
+  color: #d4af37;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  font-weight: bold;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+
+/* animación de cambio */
+.hidden {
+  display: none;
+}
+
+/* pie de página */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #3a2c22;
+  background-color: #1b120e;
+  color: #a78f7b;
+  font-size: 0.9rem;
+}

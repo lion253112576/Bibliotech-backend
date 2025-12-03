@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Temazcalli | Iniciar Sesión</title>
+  <link rel="stylesheet" href="../styles/login.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Biblioteca Temazcalli</h1>
+  </header>
+
+  <main>
+    <section class="auth-container">
+      <div class="form-box">
+        <!-- Título dinámico -->
+        <h2 id="formTitle">Iniciar Sesión</h2>
+
+        <!-- LOGIN  -->
+        <form id="loginForm">
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" placeholder="usuario@ejemplo.com" required />
+          </div>
+
+          <div class="campo">
+            <label for="contra">Contraseña</label>
+            <input type="password" id="contra" placeholder="••••••••" required />
+          </div>
+
+          <button type="submit" class="btn">Entrar</button>
+        </form>
+
+        <!-- REGISTRO -->
+        <form id="registerForm" class="hidden" method="post">
+          <div class="campo">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" placeholder="Ingresa tu nombre" required />
+          </div>
+
+          <div class="campo">
+            <label for="lastname">Apellidos</label>
+            <input type="text" id="lastname" placeholder="Tus apellidos" required />
+          </div>
+
+          <div class="campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="usuario@ejemplo.com" required />
+          </div>
+
+          <div class="campo">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="••••••••" required />
+          </div>
+
+          <div class="campo">
+            <label for="address">Dirección</label>
+            <input type="text" id="address" placeholder="Ingresa tu dirección" required />
+          </div>
+
+          <div class="campo">
+            <label for="referencia">Referencia</label>
+            <input type="text" id="referencia" placeholder="Punto de referencia (opcional)" />
+          </div>
+
+          <div class="campo">
+            <label for="number">Número de teléfono</label>
+            <input type="tel" id="number" placeholder="Ej: 555-123-4567" required />
+          </div>
+
+          <button type="submit" class="btn">Registrarse</button>
+
+        </form>
+
+        <!-- Cambio Login Registro -->
+        <p class="toggle-text">
+          <span id="toggleMessage">¿No tienes cuenta?</span>
+          <a href="#" id="toggleLink">Regístrate aquí</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Biblioteca Temazcalli</p>
+  </footer>
+
+<script src="../js/login.js"></script>
+</body>
+
+
+</html>

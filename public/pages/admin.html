@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Panel de Administrador - Biblioteca</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+        <div>
+            <button id="closeSidebar" class="closeSidebar">
+                <img src="../img/tres-puntos.png" alt="Barra lateral">
+            </button>
+        </div>
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#prestamos">Préstamos</a></li>
+            <li><a href="#usuarios">Usuarios</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+        <div>
+            <button id="showSidebar" class="mostrarSidebar">
+                <img src="../img/tres-puntos.png" alt="Barra lateral">
+            </button>
+        </div>
+        <div class="titulo">
+            <h1>Panel de Administración</h1>
+        </div>
+
+        <div class="header">
+            <button id="modoBtn" class="btnModo">🌙 Modo oscuro</button>
+            <button class="logoutBtn" id="btnLogout">Cerrar Sesion</button>
+        </div>
+        <!-- TARJETAS -->
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Total de libros</h3>
+                <p id="countLibros">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Usuarios registrados</h3>
+                <p id="countUsuarios">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Préstamos Registrados</h3>
+                <p id="countActivos">0</p>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- GESTIÓN DE CATÁLOGO -->
+        <!-- ========================================= -->
+        <section id="catalogo">
+            <h2>Gestión de Libros</h2>
+            <button id="btnAddBook">Agregar libro</button>
+            <table id="librosTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Editorial</th>
+                        <th>Fecha de Publicacion</th>
+                        <th>Estado del Libro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- SISTEMA DE PRÉSTAMOS -->
+        <!-- ========================================= -->
+        <section id="prestamos">
+            <h2>Gestión de Préstamos</h2>
+            <button id="btnAddRent">Agregar prestamo</button>
+            <table id="prestamosTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>Fecha de Préstamo</th>
+                        <th>Fecha de Devolución</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- GESTIÓN DE USUARIOS -->
+        <!-- ========================================= -->
+        <section id="usuarios">
+            <h2>Gestión de Usuarios</h2>
+            <button id="btnAddUser">Agregar usuario</button>
+            <table id="clientesTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Direccion</th>
+                        <th>Referencias</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!--MODAL USUARIOS-->
+
+    <dialog id="editUserModal" class="modal">
+        <h2 class="tituloModal">Editar Usuario</h2>
+        <form id="editUserForm">
+            <input type="hidden" id="editUserId">
+
+            <div class="campo">
+                <label for="editNombre">Nombre</label>
+                <input type="text" id="editNombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="editApellidos">Apellidos</label>
+                <input type="text" id="editApellidos" required>
+            </div>
+
+            <div class="campo" id="campoEmail" style="display: none;">
+                <label for="editCorreo">Email</label>
+                <input type="email" id="editCorreo">
+            </div>
+
+            <div class="campo" id="campoPassword" style="display: none;">
+                <label for="editPassword">Contraseña</label>
+                <input type="password" id="editPassword">
+            </div>
+
+            <div class="campo">
+                <label for="editDireccion">Dirección</label>
+                <input type="text" id="editDireccion" required>
+            </div>
+
+            <div class="campo">
+                <label for="editReferencia">Referencias</label>
+                <input type="text" id="editReferencia" required>
+            </div>
+
+            <div class="campo">
+                <label for="editTelefono">Teléfono</label>
+                <input type="text" id="editTelefono" required>
+            </div>
+
+            <div class="campo">
+                <label for="editRol">Rol</label>
+                <select id="editRol" class="selectRol" required>
+                    <option value="cliente">Cliente</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Guardar Cambios</button>
+            <button type="button" class="btn-cancel"
+                onclick="document.getElementById('editUserModal').close()">Cancelar</button>
+        </form>
+    </dialog>
+
+    <!--MODAL LIBROS-->
+
+    <dialog id="editBookModal" class="modal">
+        <h2 class="tituloModal">Editar Libro</h2>
+        <form id="editBookForm">
+            <input type="hidden" id="editBookId">
+
+            <div class="campo">
+                <label for="editNombreLib">Nombre del Libro</label>
+                <input type="text" id="editNombreLib" required>
+            </div>
+
+            <div class="campo">
+                <label for="editEditorial">Editorial</label>
+                <input type="text" id="editEditorial" required>
+            </div>
+
+            <div class="campo">
+                <label for="editAutor">Autor</label>
+                <input type="text" id="editAutor">
+            </div>
+
+            <div class="campo">
+                <label for="editFecha">Fecha de Publicacion / Edicion</label>
+                <input type="date" id="editFecha" required>
+            </div>
+
+            <div class="campo">
+                <label for="editEstado">Estado</label>
+                <select id="editEstado" class="selectRol" required>
+                    <option value="Disponible">Disponible</option>
+                    <option value="No disponible">No disponible</option>
+                    <option value="Extraviado/Dañado">Extraviado/Dañado</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Guardar Cambios</button>
+            <button type="button" class="btn-cancel"
+                onclick="document.getElementById('editBookModal').close()">Cancelar</button>
+        </form>
+    </dialog>
+
+    <!--MODAL RENTAS-->
+    <dialog id="editRentaModal" class="modal">
+        <h2 class="tituloModal">Editar prestamo</h2>
+        <form id="editRentaForm">
+            <input type="hidden" id="editRentaId">
+
+            <div class="campo" id="campoUserId" style="display: none;">
+                <label for="editUsuarioRen">Usuario</label>
+                <input type="number" id="editUsuarioRen" required>
+            </div>
+
+            <div class="campo" id="campoLibroId" style="display: none;">
+                <label for="editLibroRen">Libro Prestado</label>
+                <input type="number" id="editLibroRen" required>
+            </div>
+
+            <div class="campo" id="campoPrestamo" style="display: none;">
+                <label for="editFechaRen">Fecha de Prestamo</label>
+                <input type="date" id="editFechaRen" required>
+            </div>
+
+            <div class="campo">
+                <label for="editFechaVenc">Fecha de Devolucion</label>
+                <input type="date" id="editFechaVenc" required>
+            </div>
+
+            <div class="campo">
+                <label for="editEstadoRent">Estado</label>
+                <select id="editEstadoRent" class="selectRol" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En prestamo">En Prestamo</option>
+                    <option value="Prestamo vencido">Prestamo vencido</option>
+                    <option value="Devuelto">Devuelto</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Guardar Cambios</button>
+            <button type="button" class="btn-cancel"
+                onclick="document.getElementById('editRentaModal').close()">Cancelar</button>
+        </form>
+    </dialog>
+
+    <script src="../js/admin.js"></script>
+    <script src="../js/crudUsuarios.js"></script>
+    <script src="../js/curdLibros.js"></script>
+    <script src="../js/crudRentas.js"></script>
+</body>
+
+</html>

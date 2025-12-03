@@ -1,0 +1,180 @@
+/* estilo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0908;
+  color: #e5e0d8;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+header {
+  background: linear-gradient(90deg, #1b120e, #2b1d15);
+  padding: 1.5rem;
+  border-bottom: 2px solid #b68d40;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #d4af37;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* botones arriba */
+.top-buttons {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.3rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.top-btn {
+  background-color: #b68d40;
+  color: #1a120b;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #8c6a2c;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.top-btn:hover {
+  background-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.45);
+}
+
+/* contenido principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+/* contenedor de prestamos */
+.prestamos-container {
+  width: 92%;
+  max-width: 1100px;
+  background-color: #1c1612;
+  padding: 2.3rem;
+  border-radius: 15px;
+  border: 1px solid #3a2c22;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.75);
+  animation: fadeIn 0.4s ease-out;
+  overflow-x: auto;
+}
+
+/* tabla */
+.prestamos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+/* cabecera tabla */
+.prestamos-table thead {
+  background: linear-gradient(90deg, #2b1d15, #3c2a1f);
+}
+
+.prestamos-table th {
+  color: #d4af37;
+  padding: 0.9rem;
+  border-bottom: 2px solid #b68d40;
+  text-align: left;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 4px rgba(212, 175, 55, 0.4);
+}
+
+/* filas tabla */
+.prestamos-table tbody tr {
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.prestamos-table tbody tr:nth-child(even) {
+  background-color: #211a15;
+}
+
+.prestamos-table tbody tr:nth-child(odd) {
+  background-color: #191410;
+}
+
+.prestamos-table tbody tr:hover {
+  background-color: #3a2c22;
+  transform: translateX(3px);
+  box-shadow: 0 0 8px rgba(182, 141, 64, 0.35);
+}
+
+/* celdas tabla */
+.prestamos-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid #3a2c22;
+  color: #e5e0d8;
+}
+
+/* boton eliminar */
+.btn-delete {
+  background-color: #7a1f1f;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #4d1313;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.btn-delete:hover {
+  background-color: #b32424;
+  transform: scale(1.05);
+  box-shadow: 0 0 6px rgba(179, 36, 36, 0.6);
+}
+
+/* mensaje sin registros */
+.sin-registros {
+  text-align: center;
+  padding: 1.3rem;
+  color: #a8926f;
+  font-style: italic;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #3a2c22;
+  background-color: #1b120e;
+  color: #a78f7b;
+  font-size: 0.9rem;
+}
+
+/* responsive */
+@media (max-width: 760px) {
+  .top-buttons {
+    position: static;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .prestamos-container {
+    padding: 1.3rem;
+  }
+}
+
+/* animacion */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
