@@ -3,6 +3,7 @@ const registerForm = document.getElementById("registerForm");
 const toggleLink = document.getElementById("toggleLink");
 const toggleMessage = document.getElementById("toggleMessage");
 const formTitle = document.getElementById("formTitle");
+const API_BASE_URL = 'https://bibliotech-backend-s219.onrender.com';
 
 
 
@@ -35,6 +36,7 @@ toggleLink.addEventListener("click", (e) => {
 //FUNCIONALIDAD REGISTRO
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
   e.preventDefault();
+
   const data = {
     nombre: e.target.name.value,
     apellidos: e.target.lastname.value,
@@ -45,7 +47,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     numero: e.target.number.value,
   }
   try {
-    const res = await fetch('http://localhost:3000/api/usuarios', {
+    const res = await fetch(`${API_BASE_URL}/api/usuarios/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -73,7 +75,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     password: e.target.contra.value
   }
   try {
-    const response = await fetch('http://localhost:3000/api/usuarios/login', {
+    const response = await fetch(`${API_BASE_URL}/api/usuarios/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

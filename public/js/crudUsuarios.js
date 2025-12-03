@@ -1,4 +1,5 @@
-const API_URL = '/api/usuarios';
+const API_BASE_URL = 'https://bibliotech-backend-s219.onrender.com';
+const API_URL = `${API_BASE_URL}/api/usuarios`;
 const JWT_SECRET = '_B1Bl0t3ch_$94';
 
 //Funcion decodificacion de token 
